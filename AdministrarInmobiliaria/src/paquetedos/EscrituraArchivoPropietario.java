@@ -39,7 +39,7 @@ public class EscrituraArchivoPropietario {
             }
         } // fin de try
         catch (IOException ioException) {
-            System.err.println("Error al abrir el archivo.");
+            System.err.println("Error al abrir el archivo o la lista esta vacia.");
         } // fin de catch
     }
 

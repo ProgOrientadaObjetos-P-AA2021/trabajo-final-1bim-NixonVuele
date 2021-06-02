@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author nixon
  */
 public class EscrituraArchivoUbicacion {
-    
+
     private String nombreArchivo;
     private ObjectOutputStream salida;
     private Ubicacion registro;

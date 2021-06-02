@@ -11,14 +11,14 @@ import java.io.Serializable;
  *
  * @author reroes
  */
-public class Constructora implements Serializable{
+public class Constructora implements Serializable {
 
     private String nombreConstructora;
     private String idEmpresarial;
 
-    public Constructora(String nombreConstructora,String idEmpresarial) {
-        this.nombreConstructora=nombreConstructora;
-        this.idEmpresarial=idEmpresarial;
+    public Constructora(String nombreConstructora, String idEmpresarial) {
+        this.nombreConstructora = nombreConstructora;
+        this.idEmpresarial = idEmpresarial;
     }
 
     public void setNombreConstructora(String nombreConstructora) {

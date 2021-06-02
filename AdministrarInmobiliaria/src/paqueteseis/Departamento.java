@@ -15,7 +15,7 @@ import paquetecinco.Constructora;
  *
  * @author reroes
  */
-public class Departamento implements Serializable{
+public class Departamento implements Serializable {
 
     private Propietario propietario;
     private double precioMetroCuadrado;
@@ -29,18 +29,20 @@ public class Departamento implements Serializable{
     private String ubicacionDepartamento;
     private Constructora constructora;
 
-    public Departamento() {
-        this.propietario=propietario;
-        this.precioMetroCuadrado=precioMetroCuadrado;
-        this.numMetroCuadrado=numMetroCuadrado;
-        this.cuotaMensual=cuotaMensual;
-        this.costoFinal=costoFinal;
-        this.precio=precio;
-        this.ubicacion=ubicacion;
-        this.ciudad=ciudad;
-        this.nombreEdificio=nombreEdificio;
-        this.ubicacionDepartamento=ubicacionDepartamento;
-        this.constructora=constructora;
+    public Departamento(Propietario propietario, double precioMetroCuadrado,
+            double numMetroCuadrado, double cuotaMensual, Ubicacion ubicacion,
+            Ciudad ciudad, String nombreEdificio,
+            String ubicacionDepartamento,
+            Constructora constructora) {
+        this.propietario = propietario;
+        this.precioMetroCuadrado = precioMetroCuadrado;
+        this.numMetroCuadrado = numMetroCuadrado;
+        this.cuotaMensual = cuotaMensual;
+        this.ubicacion = ubicacion;
+        this.ciudad = ciudad;
+        this.nombreEdificio = nombreEdificio;
+        this.ubicacionDepartamento = ubicacionDepartamento;
+        this.constructora = constructora;
     }
 
     public void setPropietario(Propietario propietario) {
@@ -59,12 +61,12 @@ public class Departamento implements Serializable{
         this.cuotaMensual = cuotaMensual;
     }
 
-    public void setCostoFinal(double costoFinal) {
-        this.costoFinal = costoFinal;
+    public void setCostoFinal() {
+        this.costoFinal = precio + (cuotaMensual * 12);
     }
 
-    public void setPrescio(double prescio) {
-        this.precio = prescio;
+    public void setPrecio() {
+        this.precio = (numMetroCuadrado * precioMetroCuadrado);
     }
 
     public void setUbicacion(Ubicacion ubicacion) {
@@ -107,7 +109,7 @@ public class Departamento implements Serializable{
         return costoFinal;
     }
 
-    public double getPrescio() {
+    public double getPrecio() {
         return precio;
     }
 

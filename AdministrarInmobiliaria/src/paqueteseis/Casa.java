@@ -19,21 +19,21 @@ public class Casa implements Serializable {
 
     private Propietario propietario;
     private double precioMetroCuadrado;
-    private double numMetroCuadrado;
+    private int numMetroCuadrado;
     private double precioFinal;
     private Ubicacion ubicacion;
     private Ciudad ciudad;
     private int numCuartos;
     private Constructora constructora;
 
-    public Casa(Propietario propietario, double precioMetroCuadrado, double numMetroCuadrado, double precioFinal,
+    public Casa(Propietario propietario, double precioMetroCuadrado, int numMetroCuadrado,
             Ubicacion ubicacion, Ciudad ciudad, int numCuartos, Constructora constructora) {
         this.propietario = propietario;
         this.precioMetroCuadrado = precioMetroCuadrado;
         this.numMetroCuadrado = numMetroCuadrado;
-        this.precioFinal = precioFinal;
         this.ubicacion = ubicacion;
         this.ciudad = ciudad;
+        this.numCuartos = numCuartos;
         this.constructora = constructora;
     }
 
@@ -45,12 +45,12 @@ public class Casa implements Serializable {
         this.precioMetroCuadrado = precioMetroCuadrado;
     }
 
-    public void setNumMetroCuadrado(double numMetroCuadrado) {
+    public void setNumMetroCuadrado(int numMetroCuadrado) {
         this.numMetroCuadrado = numMetroCuadrado;
     }
 
-    public void setPrecioFinal(double precioFinal) {
-        this.precioFinal = precioFinal;
+    public void setPrecioFinal() {
+        this.precioFinal = precioMetroCuadrado * numMetroCuadrado;
     }
 
     public void setUbicacion(Ubicacion ubicacion) {
@@ -77,7 +77,7 @@ public class Casa implements Serializable {
         return precioMetroCuadrado;
     }
 
-    public double getNumMetroCuadrado() {
+    public int getNumMetroCuadrado() {
         return numMetroCuadrado;
     }
 
@@ -100,10 +100,4 @@ public class Casa implements Serializable {
     public Constructora getConstructora() {
         return constructora;
     }
-
-    @Override
-    public String toString() {
-        return "Casa{" + "propietario=" + propietario + ", precioMetroCuadrado=" + precioMetroCuadrado + ", numMetroCuadrado=" + numMetroCuadrado + ", precioFinal=" + precioFinal + ", ubicacion=" + ubicacion + ", ciudad=" + ciudad + ", numCuartos=" + numCuartos + ", constructora=" + constructora + '}';
-    }
-
 }

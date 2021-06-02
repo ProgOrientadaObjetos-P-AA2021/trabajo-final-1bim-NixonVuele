@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * @author nixon
  */
 public class LecturaArchivoPropietario {
+
     private ObjectInputStream entrada;
     private ArrayList<Propietario> listaPropietarios;
     private String nombreArchivo;
@@ -81,7 +82,10 @@ public class LecturaArchivoPropietario {
         String cadena = "Lista de Propietarios:\n";
         for (int i = 0; i < obtenerListaPropietarios().size(); i++) {
             Propietario p = obtenerListaPropietarios().get(i);
-            cadena = String.format("%s(%d) %s-%s-s\n", cadena,
+            cadena = String.format("%sPropietario numero (%d):\n"
+                    + "\t> Nombres: %s\n"
+                    + "\t> Apellidos: %s\n"
+                    + "\t> Identificacion: %s\n\n", cadena,
                     i + 1,
                     p.getNombres(),
                     p.getApellidos(),
@@ -90,6 +94,7 @@ public class LecturaArchivoPropietario {
 
         return cadena;
     }
+
     public void cerrarArchivo() {
         try // cierra el archivo y sale
         {

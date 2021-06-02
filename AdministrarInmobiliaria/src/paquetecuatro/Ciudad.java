@@ -11,14 +11,14 @@ import java.io.Serializable;
  *
  * @author reroes
  */
-public class Ciudad implements Serializable{
+public class Ciudad implements Serializable {
 
     private String nombreCity;
     private String nombreProvincia;
 
-    public Ciudad(String nombreCity,String nombreProvincia) {
-        this.nombreCity=nombreCity;
-        this.nombreProvincia=nombreProvincia;
+    public Ciudad(String nombreCity, String nombreProvincia) {
+        this.nombreCity = nombreCity;
+        this.nombreProvincia = nombreProvincia;
     }
 
     public void setNombreCity(String nombreCity) {

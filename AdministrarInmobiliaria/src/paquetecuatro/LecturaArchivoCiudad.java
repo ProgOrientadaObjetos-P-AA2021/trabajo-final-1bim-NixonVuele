@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * @author nixon
  */
 public class LecturaArchivoCiudad {
+
     private ObjectInputStream entrada;
     private ArrayList<Ciudad> listaCiudad;
     private String nombreArchivo;
@@ -81,7 +82,9 @@ public class LecturaArchivoCiudad {
         String cadena = "Lista de Ciudades:\n";
         for (int i = 0; i < obtenerListaCiudad().size(); i++) {
             Ciudad p = obtenerListaCiudad().get(i);
-            cadena = String.format("%s(%d) %s-%s-s\n", cadena,
+            cadena = String.format("%sCiudad numero (%d):\n"
+                    + "\t> Ciudad: %s\n"
+                    + "\t> Provincia: %s\n\n", cadena,
                     i + 1,
                     p.getNombreCity(),
                     p.getNombreProvincia());
@@ -89,6 +92,7 @@ public class LecturaArchivoCiudad {
 
         return cadena;
     }
+
     public void cerrarArchivo() {
         try // cierra el archivo y sale
         {

@@ -44,8 +44,8 @@ public class EscrituraArchivoDepartamento {
         nombreArchivoDepartamentos = n;
     }
 
-    public void establecerRegistroDepartamento(Departamento rdp) {
-        registroDepartamento = rdp;
+    public void establecerRegistroDepartamento(Departamento n) {
+        registroDepartamento = n;
     }
 
     public void establecerSalida() {

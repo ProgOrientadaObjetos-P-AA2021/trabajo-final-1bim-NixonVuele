@@ -28,8 +28,8 @@ public class Ejecutor {
             System.out.println("==============Administración Inmobiliaria====="
                     + "======");
             System.out.printf("Eliga la opcion que desea:"
-                    + "\n1.Ingresar registros\n2.Mostrar registros\n3.Salir"
-                    + "\n> ");
+                    + "\n1.Ingresar registros\n2.Mostrar registros\n3.Verificar"
+                    + " Datos\n4. salir\n> ");
             ingresarMostrar = sc.nextInt();
             if (ingresarMostrar == 1) {
                 System.out.println("Seleccione la opcion que desea:");
@@ -145,14 +145,55 @@ public class Ejecutor {
                     }
                 }
                 if (ingresarMostrar == 3) {
+                    System.out.println("Que datos desea Verificar:");
+                    System.out.printf("1.Verificar propietario\n"
+                            + "2.Verificar ubicaciones\n"
+                            + "3.Verificar ciudad\n"
+                            + "4.Verificar constructora\n");
+                    sc.nextLine();
+                    opcionIngreso = sc.nextInt();
+                    switch (opcionIngreso) {
+                        case 1:
+                            System.out.println("Ingrese la identificacion del "
+                                    + "Propietario:");
+                            sc.nextLine();
+                            String verificacionPorpi = sc.nextLine();
+                            verificacionPropietarios(verificacionPorpi);
+                            break;
+                        case 2:
+                            System.out.println("Ingrese el numero de la "
+                                    + " casa o Departamento:");
+                            int verificacionNumDepa = sc.nextInt();
+                            verificacionUbicacion(verificacionNumDepa);
+                            break;
+                        case 3:
+                            sc.nextLine();
+                            System.out.println("Ingrese el nombre de la ciudad:");
+                            String verificacionCity = sc.nextLine();
+                            verificacionCiudad(verificacionCity);
+                            break;
+                        case 4:
+                            sc.nextLine();
+                            System.out.println("Ingres el ID de la empresa "
+                                    + "constructora:");
+                            String verificacionidCons = sc.nextLine();
+                            verificacionConstructora(verificacionidCons);
+                            break;
+                        default:
+                            System.err.println("Eligio una opcion fuera del "
+                                    + "rango(1-4)");
+
+                    }
+                }
+                if (ingresarMostrar == 4) {
                     salida = false;
                     System.out.println("\u001B[34mGracias por registrarce en "
                             + "nuestra inmobiliaria");
                 }
                 if (ingresarMostrar != 1 && ingresarMostrar != 2
-                        && ingresarMostrar != 3) {
+                        && ingresarMostrar != 3 && ingresarMostrar != 4) {
                     System.err.println("Eligio una opcion fuera del "
-                            + "rango(1-3)");
+                            + "rango(1-4)");
 
                 }
             }
@@ -469,7 +510,7 @@ public class Ejecutor {
     }
 
     //En verificacion Principal se reciben los valores que son necesarios para 
-    //comprar si constan en el sistema, caso contrario se tendrian que registrar
+    //compararr si constan en el sistema, caso contrario se tendrian que registrar
     public static void verificacionPrincipal(String idPropi, int numCas,
             String nameCiu, String constructoraID) {
 
